@@ -1,0 +1,13 @@
+.group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 4rem;
+  @media (min-width: 767px) {
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 0;
+    margin-bottom: 2rem;
+  }
+}

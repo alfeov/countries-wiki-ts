@@ -1,0 +1,16 @@
+.header {
+  box-shadow: 0 0 6px var(--sidebar-ring);
+  background-color: var(--sidebar);
+  width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 3rem;
+  height: var(--header-height);
+  @media (min-width: 767px) {
+    padding-inline: 4rem;
+  }
+}

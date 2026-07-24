@@ -6,3 +6,8 @@ body {
   overflow-x: hidden;
   font-size: 1.6rem;
 }
+
+/* removing redix-ui settings, we have scrollbar-gutter: stable for this case */
+body[data-scroll-locked][data-scroll-locked] {
+  margin-right: 0px !important;
+}

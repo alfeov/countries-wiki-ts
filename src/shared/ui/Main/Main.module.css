@@ -1,0 +1,17 @@
+.main {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: var(--muted);
+  padding: 3rem;
+  min-height: calc(100vh - var(--header-height));
+
+  @media (min-width: 767px) {
+    padding: 4rem;
+  }
+}
+
+:global(.dark) .main {
+  background-color: var(--background);
+}

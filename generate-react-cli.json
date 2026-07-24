@@ -1,0 +1,22 @@
+{
+  "usesTypeScript": true,
+  "usesStyledComponents": false,
+  "usesCssModule": true,
+  "cssPreprocessor": "css",
+  "testLibrary": "None",
+  "component": {
+    "default": {
+      "path": "src/shared/ui",
+      "withStyle": true,
+      "withTest": false,
+      "withStory": false,
+      "withLazy": false,
+      "withIndex": true,
+      "customTemplates": {
+        "component": "templates/TemplateName.tsx",
+        "style": "templates/TemplateName.module.css",
+        "index": "templates/index.ts"
+      }
+    }
+  }
+}
