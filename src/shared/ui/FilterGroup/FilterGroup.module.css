@@ -4,7 +4,8 @@
   justify-content: space-between;
   gap: 5px;
   margin-bottom: 20px;
-  @media (min-width: 767px) {
+
+  @media (width >= 767px) {
     flex-direction: row;
     align-items: flex-start;
     margin-bottom: 0;

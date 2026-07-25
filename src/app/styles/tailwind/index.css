@@ -1,7 +1,7 @@
-@import 'tailwindcss';
-@import 'tw-animate-css';
-@import 'shadcn/tailwind.css';
-@import '@fontsource-variable/inter';
+@import url('tailwindcss');
+@import url('tw-animate-css');
+@import url('shadcn/tailwind.css');
+@import url('@fontsource-variable/inter');
 
 @custom-variant dark (&:is(.dark *));
 
@@ -121,9 +121,11 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   html {
     @apply font-sans;
   }

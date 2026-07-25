@@ -10,7 +10,8 @@
   align-items: center;
   padding-inline: 30px;
   height: var(--header-height);
-  @media (min-width: 767px) {
+
+  @media (width >= 767px) {
     padding-inline: 40px;
   }
 }

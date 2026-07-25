@@ -37,8 +37,8 @@ body,
 }
 
 :where(fieldset[class]) {
-  padding: 0;
   border: none;
+  padding: 0;
 }
 
 /**
@@ -59,7 +59,7 @@ body,
   чтобы избежать взаимодействие с более сложным селектором
  */
 p {
-  --paragraphMarginBottom: 0px;
+  --paragraph-margin-bottom: 0px;
 
   margin-block: 0;
 }
@@ -68,8 +68,8 @@ p {
   Внешний отступ вниз для параграфа без атрибута class,
   который расположен не последним среди своих соседних элементов
  */
-p:where(:not([class]):not(:last-child)) {
-  margin-bottom: var(--paragraphMarginBottom);
+p:where(:not([class], :last-child)) {
+  margin-bottom: var(--paragraph-margin-bottom);
 }
 
 /**
@@ -93,61 +93,64 @@ button {
 }
 
 html {
-  /**
+  /*
     Пригодится в большинстве ситуаций
     (когда, например, нужно будет "прижать" футер к низу сайта)
-   */
+	*/
   height: 100%;
-  /**
+
+  /*
+    Плавный скролл
+	*/
+  scroll-behavior: smooth;
+
+  /*
     Убираем скачок интерфейса по горизонтали
     при появлении / исчезновении скроллбара
-   */
+	*/
   scrollbar-gutter: stable;
-  /**
-    Плавный скролл
-   */
-  scroll-behavior: smooth;
 }
 
 body {
-  /**
+  /*
     Пригодится в большинстве ситуаций
     (когда, например, нужно будет "прижать" футер к низу сайта)
-   */
+	*/
   min-height: 100%;
-  /**
+
+  /*
     Унифицированный интерлиньяж
-   */
+	*/
   line-height: 1.5;
 }
 
-/**
+/*
   Нормализация высоты элемента ссылки при его инспектировании в DevTools
- */
+*/
 a:where([class]) {
   display: inline-flex;
 }
 
-/**
+/*
   Курсор-рука при наведении на элемент
- */
+*/
 button,
 label {
   cursor: pointer;
 }
 
-/**
+/*
   Убирает серую подсветку при тапе на мобильных устройствах (iOS/Android)
- */
+*/
 button {
   -webkit-tap-highlight-color: transparent;
 }
 
-/**
+/*
   Приводим к единому цвету svg-элементы
   (за исключением тех, у которых уже указан
   атрибут fill со значением 'none' или начинается с 'url')
- */
+*/
 :where([fill]:not([fill='none'], [fill^='url'])) {
   fill: currentColor;
 }
@@ -172,8 +175,8 @@ svg * {
   Приведение рамок таблиц в классический 'collapse' вид
  */
 :where(table) {
-  border-collapse: collapse;
   border-color: currentColor;
+  border-collapse: collapse;
 }
 
 /**

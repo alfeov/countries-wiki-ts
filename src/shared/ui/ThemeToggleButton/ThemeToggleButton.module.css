@@ -13,7 +13,6 @@
 
 .moon {
   position: absolute;
-
   transform: scale(0) rotate(90deg);
   transition-duration: 300ms;
   transition-property: all;
