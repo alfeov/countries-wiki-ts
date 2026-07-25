@@ -26,7 +26,7 @@ export function FilterSearch() {
       autoComplete='off'
       {...sideVariant(-200)}
     >
-      <Field data-invalid={error.isError} className='gap-[0.5rem]'>
+      <Field data-invalid={error.isError} className='gap-[5px]'>
         <InputGroup className='md:w-fit'>
           <InputGroupInput
             aria-invalid={error.isError}
@@ -40,7 +40,7 @@ export function FilterSearch() {
             </InputGroupButton>
           </InputGroupAddon>
         </InputGroup>
-        <FieldDescription className='h-[1.5em] ml-[0.5rem] text-destructive'>
+        <FieldDescription className='h-[1.5em] ml-[5px] text-destructive'>
           {error.message}
         </FieldDescription>
       </Field>

@@ -18,7 +18,8 @@ export function useSearchForm(
     const formattedInput = input.trim()
 
     // empty search also correct
-    if (formattedInput.length === 0 || testLatin(formattedInput)) {
+    const isEmpty = formattedInput.length === 0
+    if (isEmpty || testLatin(formattedInput)) {
       onSubmit(formattedInput)
       event.target.reset()
     } else {

@@ -33,7 +33,7 @@ export function CountriesList() {
     <>
       <FetchingIndicator
         conditions={!isLoading && isFetching}
-        wrapperClassName='pt-[14.5rem] md:pt-[7rem]'
+        wrapperClassName='pt-[145px] md:pt-[70px]'
       />
       {isLoading && <SpinnerEmpty>Loading countries</SpinnerEmpty>}
       {isError && <ErrorEmpty>{formatApiError(error)}</ErrorEmpty>}

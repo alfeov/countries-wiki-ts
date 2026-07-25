@@ -23,7 +23,7 @@ export function FetchingIndicator({
             initial={{ y: -40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -40, opacity: 0 }}
-            className={`sticky top-[4rem] bg-input dark:bg-chart-4 rounded-2xl p-[0.5rem] ${className}`}
+            className={`sticky top-[40px] bg-input dark:bg-chart-4 rounded-2xl p-[5px] ${className}`}
           >
             <Spinner className='size-6' />
           </motion.div>

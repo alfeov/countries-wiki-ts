@@ -6,8 +6,8 @@
 
 .imgWrapper {
   display: flex;
-  width: 100%;
   position: relative;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -17,6 +17,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
   color: oklch(0.556 0 0);
-  font-size: 1.8rem;
+  font-size: 20px;
   text-align: center;
 }

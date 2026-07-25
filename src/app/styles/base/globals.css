@@ -1,10 +1,6 @@
-html {
-  font-size: 10px;
-}
-
 body {
   overflow-x: hidden;
-  font-size: 1.6rem;
+  font-size: 16px;
 }
 
 /* removing redix-ui settings, we have scrollbar-gutter: stable for this case */

@@ -25,13 +25,13 @@ export function BorderCountries({ bordersCodes }: BorderCountriesProps) {
     useBorders(bordersCodes)
 
   return (
-    <footer className='grid gap-[2rem]'>
-      <h2 className='text-[2.4rem] font-[600]'>Border Countries:</h2>
-      <motion.div {...listVariant()} className='flex flex-wrap gap-[1rem]'>
+    <footer className='grid gap-[20px]'>
+      <h2 className='text-[24px] font-[600]'>Border Countries:</h2>
+      <motion.div {...listVariant()} className='flex flex-wrap gap-[10px]'>
         {isFetching &&
           bordersCodes?.map((border) => (
             <Skeleton
-              className='h-[2.6rem] w-[10rem] rounded-3xl p-[1.2rem] bg-muted-foreground dark:bg-muted'
+              className='h-[26px] w-[100px] rounded-3xl p-[12px] bg-muted-foreground dark:bg-muted'
               key={border + 'skeleton'}
             />
           ))}
@@ -45,7 +45,7 @@ export function BorderCountries({ bordersCodes }: BorderCountriesProps) {
               key={country?.codes.alpha_3}
               className='w-fit rounded-3xl'
             >
-              <Badge className='text-[1.4rem] p-[1.2rem] h-[2.6rem]'>
+              <Badge className='text-[14px] p-[12px] h-[26px]'>
                 {country?.names.common}
                 <ArrowUpRightIcon data-icon='inline-end' />
               </Badge>

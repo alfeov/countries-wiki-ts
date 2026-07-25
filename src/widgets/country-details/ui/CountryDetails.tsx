@@ -23,7 +23,7 @@ export function CountryDetails() {
     <>
       <FetchingIndicator
         conditions={!isLoading && isFetching}
-        wrapperClassName='pt-[4rem] md:pt-[5rem]'
+        wrapperClassName='pt-[40px] md:pt-[50px]'
       />
       {isLoading && (
         <SpinnerEmpty>Loading country with code {countryCode}</SpinnerEmpty>

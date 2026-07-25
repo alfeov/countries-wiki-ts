@@ -31,14 +31,14 @@ export function CountryInfo({ country, children }: CountryInfoProps) {
 
   return (
     <>
-      <div className='grid gap-[3rem] overflow-hidden'>
+      <div className='grid gap-[30px] overflow-hidden'>
         <MotionLink to='/' className='w-fit rounded-4xl' {...sideVariant(-200)}>
           <Button tabIndex={-1}>
             <ArrowLeft data-icon='inline-start' />
             Back
           </Button>
         </MotionLink>
-        <div className='grid gap-[3rem] lg:gap-[4rem] lg:grid-cols-2'>
+        <div className='grid gap-[30px] lg:gap-[40px] lg:grid-cols-2'>
           <motion.div {...sideVariant(-200)}>
             <ImageWithLoader
               src={flag.url_png || 'errorSrc'}
@@ -52,12 +52,12 @@ export function CountryInfo({ country, children }: CountryInfoProps) {
           </motion.div>
           <motion.article
             {...sideVariant(200)}
-            className='grid gap-[2rem] content-start'
+            className='grid gap-[20px] content-start'
           >
             <header>
-              <h1 className='text-[3rem] font-[600]'>{names.common}</h1>
+              <h1 className='text-[30px] font-[600]'>{names.common}</h1>
             </header>
-            <main className='grid gap-[2rem] lg:grid-cols-2'>
+            <main className='grid gap-[20px] lg:grid-cols-2'>
               <div>
                 <p>
                   <strong>Official Name: </strong>

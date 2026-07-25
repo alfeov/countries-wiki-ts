@@ -27,7 +27,7 @@ export function CountryItem(props: CountryItemProps) {
         noImageText={names.common}
         aspectRatio='3/2'
       >
-        <Skeleton className='w-full m-[2rem]' />
+        <Skeleton className='w-full m-[20px]' />
       </ImageWithLoader>
       <CardHeader className='grow'>
         <CardTitle>{names.common}</CardTitle>
