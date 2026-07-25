@@ -1,9 +1,9 @@
 import { SearchIcon } from 'lucide-react'
 import { motion } from 'motion/react'
-import { type ChangeEvent, type SubmitEvent, useState } from 'react'
 
+import { useSearch } from '@/features/filters/model/useSearch'
+import { useSearchForm } from '@/features/filters/model/useSearchForm'
 import { sideVariant } from '@/shared/lib/utils/motion'
-import { testLatin } from '@/shared/lib/utils/testLatin'
 import { Field, FieldDescription } from '@/shared/ui/field'
 import {
   InputGroup,
@@ -12,32 +12,12 @@ import {
   InputGroupInput,
 } from '@/shared/ui/input-group'
 
-import { useSearch } from '../../model/useSearch'
-
-const initialState = { isError: false, message: '' }
-
 export function FilterSearch() {
   const [search, setSearch] = useSearch()
-  const [input, setInput] = useState(search)
-  const [error, setError] = useState(initialState)
-
-  function handleSubmit(event: SubmitEvent) {
-    event.preventDefault()
-    setError(initialState)
-
-    const formattedInput = input.trim()
-
-    // empty search also correct
-    if (formattedInput.length === 0 || testLatin(formattedInput)) {
-      setSearch(formattedInput)
-      event.target.reset()
-    } else {
-      setError({
-        isError: true,
-        message: 'This field can contain only latin symbols and spaces',
-      })
-    }
-  }
+  const { input, error, handleChange, handleSubmit } = useSearchForm(
+    setSearch,
+    search,
+  )
 
   return (
     <motion.form
@@ -52,9 +32,7 @@ export function FilterSearch() {
             aria-invalid={error.isError}
             placeholder='Search for a country...'
             value={input}
-            onChange={(event: ChangeEvent<HTMLInputElement>) =>
-              setInput(event.target.value)
-            }
+            onChange={handleChange}
           />
           <InputGroupAddon align='inline-end'>
             <InputGroupButton type='submit' aria-label='Search' size='icon-xs'>
