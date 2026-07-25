@@ -37,7 +37,7 @@ export function BorderCountries({ bordersCodes }: BorderCountriesProps) {
           ))}
         {isError && <ErrorEmpty>{formatApiError(error)}</ErrorEmpty>}
         {isSuccess &&
-          !isFetching &&
+          !isFetching && // for prevent previous result showing
           borders.map((country) => (
             <MotionLink
               variants={itemVariants}

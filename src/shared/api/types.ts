@@ -1,5 +1,5 @@
 export interface ResultType<T> {
-  objects: T
+  objects: T | never[]
   meta: Meta
 }
 

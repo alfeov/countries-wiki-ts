@@ -3,10 +3,10 @@ import { api, type RawResultType, type ResultType } from '@/shared/api'
 
 const countryDetailsApi = api.injectEndpoints({
   endpoints: (build) => ({
-    getCountry: build.query<
-      ResultType<Country[] | never[]>,
+    getCountryDetails: build.query<
+      ResultType<Country[]>,
       CountryCode,
-      RawResultType<Country[] | never[]>
+      RawResultType<Country[]>
     >({
       query: (countryAlpha3Code) => `/codes.alpha_3/${countryAlpha3Code}`,
       transformResponse: (res) => res.data,
@@ -15,7 +15,7 @@ const countryDetailsApi = api.injectEndpoints({
   }),
 })
 
-export const { useGetCountryQuery } = countryDetailsApi
+export const { useGetCountryDetailsQuery } = countryDetailsApi
 
 // import data from '@/shared/mock/data.json'
 // import { wait } from '../helpers/wait'

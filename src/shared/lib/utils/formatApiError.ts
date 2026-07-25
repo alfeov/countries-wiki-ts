@@ -6,7 +6,10 @@ export const formatApiError = (
 ) => {
   if (error) {
     if ('status' in error) {
-      return 'error' in error ? error.error : JSON.stringify(error.data)
+      return (
+        `${error.status} - ` +
+        ('error' in error ? error.error : JSON.stringify(error.data))
+      )
     }
     if ('message' in error) return error.message ?? 'Unknown error'
   }

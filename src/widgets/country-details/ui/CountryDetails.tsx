@@ -5,7 +5,7 @@ import { formatApiError } from '@/shared/lib/utils/formatApiError'
 import { ErrorEmpty } from '@/shared/ui/ErrorEmpty'
 import { FetchingIndicator } from '@/shared/ui/FetchingIndicator/FetchingIndicator'
 import { SpinnerEmpty } from '@/shared/ui/SpinnerEmpty'
-import { useCountry } from '@/widgets/country-details/model/useCountry'
+import { useCountryDetails } from '@/widgets/country-details/model/useCountryDetails'
 
 export function CountryDetails() {
   useScrollToTop()
@@ -17,7 +17,7 @@ export function CountryDetails() {
     isError,
     isFetching,
     error,
-  } = useCountry()
+  } = useCountryDetails()
 
   return (
     <>
@@ -36,7 +36,7 @@ export function CountryDetails() {
           )}
         </CountryInfo>
       )}
-      {!isSuccess && !isLoading && (
+      {isSuccess && !isLoading && !('names' in country) && (
         <ErrorEmpty>Country with code {countryCode} not found (404)</ErrorEmpty>
       )}
     </>

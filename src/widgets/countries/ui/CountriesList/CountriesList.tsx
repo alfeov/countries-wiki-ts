@@ -1,6 +1,7 @@
 import { motion } from 'motion/react'
 
 import { CountryItem } from '@/entities/country/ui/CountryItem'
+import { formatApiError } from '@/shared/lib/utils/formatApiError'
 import {
   createMotionedComponent,
   itemVariants,
@@ -35,13 +36,13 @@ export function CountriesList() {
         wrapperClassName='pt-[14.5rem] md:pt-[7rem]'
       />
       {isLoading && <SpinnerEmpty>Loading countries</SpinnerEmpty>}
-      {isError && <ErrorEmpty>{error.message ?? 'Unknown error'}</ErrorEmpty>}
+      {isError && <ErrorEmpty>{formatApiError(error)}</ErrorEmpty>}
       {isSuccess && countries?.length === 0 && (
         <ErrorEmpty>There are no countries for your query</ErrorEmpty>
       )}
       {isSuccess && (
         <motion.div {...listVariant()} className={styles.list}>
-          {countries?.map((country) => (
+          {countries.map((country) => (
             <MotionCountryItem
               variants={itemVariants}
               key={country.codes.alpha_3}
