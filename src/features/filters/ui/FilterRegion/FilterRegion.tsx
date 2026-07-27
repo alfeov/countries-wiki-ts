@@ -1,4 +1,4 @@
-import { useRegion } from '@/features/filters/model/useRegion'
+import { useRegion } from '@/features/filters/model'
 import { createMotionedComponent, sideVariant } from '@/shared/lib/utils/motion'
 import {
   Select,
@@ -35,6 +35,7 @@ export function FilterRegion() {
           <SelectItem value='Asia'>Asia</SelectItem>
           <SelectItem value='Europe'>Europe</SelectItem>
           <SelectItem value='Oceania'>Oceania</SelectItem>
+          <SelectItem value='Antarctic'>Antarctic</SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select>

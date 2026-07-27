@@ -22,7 +22,7 @@ export function CountryItem(props: CountryItemProps) {
   return (
     <Card className='pt-0' ref={ref}>
       <ImageWithLoader
-        src={flag.url_png || 'errorSrc'} // to perform empty string
+        src={flag.url_png}
         alt={names.common}
         noImageText={names.common}
         aspectRatio='3/2'

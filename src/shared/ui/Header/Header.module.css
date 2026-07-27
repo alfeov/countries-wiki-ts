@@ -1,15 +1,16 @@
 .header {
-  box-shadow: 0 0 6px var(--sidebar-ring);
-  background-color: var(--sidebar);
   width: 100%;
+  background-color: var(--sidebar);
+  box-shadow: 0 0 6px var(--sidebar-ring);
 }
 
 .wrapper {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding-inline: 30px;
+  justify-content: space-between;
+
   height: var(--header-height);
+  padding-inline: 30px;
 
   @media (width >= 767px) {
     padding-inline: 40px;

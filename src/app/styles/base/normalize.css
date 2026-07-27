@@ -37,8 +37,8 @@ body,
 }
 
 :where(fieldset[class]) {
-  border: none;
   padding: 0;
+  border: none;
 }
 
 /**
@@ -94,12 +94,6 @@ button {
 
 html {
   /*
-    Пригодится в большинстве ситуаций
-    (когда, например, нужно будет "прижать" футер к низу сайта)
-	*/
-  height: 100%;
-
-  /*
     Плавный скролл
 	*/
   scroll-behavior: smooth;
@@ -109,6 +103,12 @@ html {
     при появлении / исчезновении скроллбара
 	*/
   scrollbar-gutter: stable;
+
+  /*
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+	*/
+  height: 100%;
 }
 
 body {
@@ -175,8 +175,8 @@ svg * {
   Приведение рамок таблиц в классический 'collapse' вид
  */
 :where(table) {
-  border-color: currentColor;
   border-collapse: collapse;
+  border-color: currentColor;
 }
 
 /**
@@ -187,9 +187,9 @@ svg * {
   *,
   ::before,
   ::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
   }
 }

@@ -1,8 +1,8 @@
 import { SearchIcon } from 'lucide-react'
 import { motion } from 'motion/react'
 
-import { useSearch } from '@/features/filters/model/useSearch'
-import { useSearchForm } from '@/features/filters/model/useSearchForm'
+import { useSearch } from '@/features/filters/model'
+import { useSearchForm } from '@/features/filters/model'
 import { sideVariant } from '@/shared/lib/utils/motion'
 import { Field, FieldDescription } from '@/shared/ui/field'
 import {

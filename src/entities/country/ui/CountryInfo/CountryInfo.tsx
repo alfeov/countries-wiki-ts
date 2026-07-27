@@ -41,7 +41,7 @@ export function CountryInfo({ country, children }: CountryInfoProps) {
         <div className='grid gap-[30px] lg:gap-[40px] lg:grid-cols-2'>
           <motion.div {...sideVariant(-200)}>
             <ImageWithLoader
-              src={flag.url_png || 'errorSrc'}
+              src={flag.url_png}
               alt={names.common}
               noImageText={names.common}
               aspectRatio='3/2'

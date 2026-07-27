@@ -5,15 +5,19 @@ import noImage from './no-image.png'
 import styles from './ImageWithLoader.module.css'
 
 interface ImageWithLoaderProps extends React.ImgHTMLAttributes<HTMLImageElement> {
+  src: React.ImgHTMLAttributes<HTMLImageElement>['src']
+  alt: React.ImgHTMLAttributes<HTMLImageElement>['alt']
   children: React.ReactNode
+  aspectRatio?: string
   noImageText?: string
-  aspectRatio: string
   className?: string
   wrapperClassName?: string
   style?: React.CSSProperties
 }
 
 export function ImageWithLoader({
+  src,
+  alt,
   children,
   noImageText = '',
   aspectRatio = '3/2',
@@ -41,7 +45,8 @@ export function ImageWithLoader({
       {imgLoading && children && children}
       {!imgError ? (
         <img
-          {...props}
+          src={src || 'errorSrc'} // to perform empty string
+          alt={alt}
           className={`${styles.img} ${className}`}
           style={{
             width: imgLoading ? '0' : '100%',
@@ -51,6 +56,7 @@ export function ImageWithLoader({
           loading='lazy'
           onError={handleError}
           onLoad={handleLoad}
+          {...props}
         />
       ) : (
         <>

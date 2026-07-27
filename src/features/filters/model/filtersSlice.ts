@@ -1,8 +1,10 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 
+import type { FilterRegion } from './types'
+
 export interface FiltersState {
   search: string
-  region: string
+  region: FilterRegion
 }
 
 const initialState: FiltersState = {
@@ -17,7 +19,7 @@ const filtersSlice = createSlice({
     setSearch: (state, action: PayloadAction<string>) => {
       state.search = action.payload
     },
-    setRegion: (state, action: PayloadAction<string>) => {
+    setRegion: (state, action: PayloadAction<FilterRegion>) => {
       state.region = action.payload
     },
   },

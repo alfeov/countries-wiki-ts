@@ -8,13 +8,21 @@ interface CountryItemNames {
 
 export type CountryCode = string
 
+export type Region =
+  | 'Africa'
+  | 'Americas'
+  | 'Asia'
+  | 'Europe'
+  | 'Oceania'
+  | 'Antarctic'
+
 export interface CountryItem {
   flag: {
     url_png: string
   }
   names: CountryItemNames
   population: number
-  region: string
+  region: Omit<Region, ''>
   capitals: Capital[]
   codes: {
     alpha_3: CountryCode

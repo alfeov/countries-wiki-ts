@@ -1,5 +1,5 @@
 import type { CountryItem } from '@/entities/country/model/types'
-import type { FiltersState } from '@/features/filters/model/filtersSlice'
+import type { FilterRegion, FiltersState } from '@/features/filters/model'
 import {
   api,
   type Meta,
@@ -12,7 +12,7 @@ type InitialPageParam = Pick<Meta, 'limit' | 'offset'>
 interface Params extends InitialPageParam {
   response_fields: string
   q?: string
-  region?: string
+  region?: FilterRegion
 }
 
 const countriesApi = api.injectEndpoints({
@@ -44,7 +44,7 @@ const countriesApi = api.injectEndpoints({
       },
       query: ({
         pageParam: { offset, limit },
-        queryArg: { search = '', region = '' } = {},
+        queryArg: { search, region } = {},
       }) => {
         const params: Params = {
           response_fields:

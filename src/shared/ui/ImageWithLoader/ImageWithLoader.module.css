@@ -5,10 +5,10 @@
 }
 
 .imgWrapper {
-  display: flex;
   position: relative;
-  width: 100%;
   overflow: hidden;
+  display: flex;
+  width: 100%;
 }
 
 .noImgText {
@@ -16,7 +16,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: oklch(0.556 0 0);
+
   font-size: 20px;
+  color: oklch(0.556 0 0);
   text-align: center;
 }

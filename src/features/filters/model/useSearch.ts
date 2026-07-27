@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import {
   selectSearch,
   setSearch as setSearchAction,
-} from '@/features/filters/model/filtersSlice'
+} from '@/features/filters/model'
 
 export function useSearch(): [
   search: typeof search,

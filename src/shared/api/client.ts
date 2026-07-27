@@ -13,4 +13,5 @@ export const api = createApi({
   }),
   tagTypes: ['Countries', 'Country', 'Borders'],
   endpoints: () => ({}),
+  keepUnusedDataFor: Infinity,
 })

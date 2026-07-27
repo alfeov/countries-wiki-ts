@@ -1,11 +1,14 @@
 .main {
-  display: flex;
   position: relative;
+
+  display: flex;
   flex-direction: column;
   gap: 20px;
-  background-color: var(--muted);
-  padding: 30px;
+
   min-height: calc(100vh - var(--header-height));
+  padding: 30px;
+
+  background-color: var(--muted);
 
   @media (width >= 767px) {
     padding: 40px;

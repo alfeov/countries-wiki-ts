@@ -1,8 +1,9 @@
 .group {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   gap: 5px;
+  justify-content: space-between;
+
   margin-bottom: 20px;
 
   @media (width >= 767px) {
