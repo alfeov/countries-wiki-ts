@@ -24,8 +24,9 @@ interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
 export function Image({
   src,
   alt,
-  className = '',
   children,
+  className = '',
+  style = {},
   ...props
 }: ImageProps) {
   const [isLoading, setIsLoading] = useState(true)
@@ -45,10 +46,15 @@ export function Image({
         <img
           src={src || 'errorSrc'} // to perform empty string
           alt={alt}
-          className={`${styles.img} ${className}`}
           loading='lazy'
           onError={handleError}
           onLoad={handleLoad}
+          className={`${styles.img} ${className}`}
+          style={{
+            width: isLoading ? '0' : '100%',
+            opacity: isLoading ? '0' : '1',
+            ...style,
+          }}
           {...props}
         />
       )}
