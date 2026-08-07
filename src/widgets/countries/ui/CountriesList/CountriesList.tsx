@@ -7,9 +7,9 @@ import {
   itemVariants,
   listVariant,
 } from '@/shared/lib/utils/motion'
+import { AnimatedFetchingIndicator } from '@/shared/ui/AnimatedFetchingIndicator'
 import { Button } from '@/shared/ui/button'
 import { ErrorEmpty } from '@/shared/ui/ErrorEmpty'
-import { FetchingIndicator } from '@/shared/ui/FetchingIndicator/FetchingIndicator'
 import { SpinnerEmpty } from '@/shared/ui/SpinnerEmpty'
 import { useCountries } from '@/widgets/countries/model/useCountries'
 
@@ -31,9 +31,9 @@ export function CountriesList() {
 
   return (
     <>
-      <FetchingIndicator
+      <AnimatedFetchingIndicator
         conditions={!isLoading && isFetching}
-        wrapperClassName='pt-[145px] md:pt-[70px]'
+        className='pt-[70px] md:pt-[145px]'
       />
       {isLoading && <SpinnerEmpty>Loading countries</SpinnerEmpty>}
       {isError && <ErrorEmpty>{formatApiError(error)}</ErrorEmpty>}

@@ -1,34 +1,36 @@
-import { AnimatePresence, motion } from 'motion/react'
-
 import { Spinner } from '@/shared/ui/spinner'
+import {
+  AbsoluteWrapper,
+  StickyPortalWrapper,
+  StickyWrapper,
+} from '@/shared/ui/Sticky'
 
-interface FetchingIndicatorProps {
+//! set body position relative
+
+export interface FetchingIndicatorProps {
   conditions: boolean
-  className?: string
-  wrapperClassName?: string
+  className: string
 }
 
 export function FetchingIndicator({
+  className,
   conditions,
-  className = '',
-  wrapperClassName = '',
 }: FetchingIndicatorProps) {
   return (
-    <AnimatePresence>
+    <>
       {conditions && (
-        <div
-          className={`absolute h-full left-[50%] top-0 translate-x-[-50%] z-10 ${wrapperClassName}`}
-        >
-          <motion.div
-            initial={{ y: -40, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -40, opacity: 0 }}
-            className={`sticky top-[40px] bg-input dark:bg-chart-4 rounded-2xl p-[5px] ${className}`}
+        <StickyPortalWrapper>
+          <AbsoluteWrapper
+            className={`left-[50%] translate-x-[-50%] ${className}`}
           >
-            <Spinner className='size-6' />
-          </motion.div>
-        </div>
+            <StickyWrapper className='top-[40px]'>
+              <div className='bg-input dark:bg-chart-4 rounded-2xl p-[5px]'>
+                <Spinner className='size-6' />
+              </div>
+            </StickyWrapper>
+          </AbsoluteWrapper>
+        </StickyPortalWrapper>
       )}
-    </AnimatePresence>
+    </>
   )
 }

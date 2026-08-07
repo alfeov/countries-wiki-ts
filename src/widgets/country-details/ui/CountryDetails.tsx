@@ -2,8 +2,8 @@ import { BorderCountries } from '@/entities/borders/ui/BorderCountries'
 import { CountryInfo } from '@/entities/country/ui/CountryInfo/CountryInfo'
 import { useScrollToTop } from '@/shared/lib/hooks/useScrollToTop'
 import { formatApiError } from '@/shared/lib/utils/formatApiError'
+import { AnimatedFetchingIndicator } from '@/shared/ui/AnimatedFetchingIndicator'
 import { ErrorEmpty } from '@/shared/ui/ErrorEmpty'
-import { FetchingIndicator } from '@/shared/ui/FetchingIndicator/FetchingIndicator'
 import { SpinnerEmpty } from '@/shared/ui/SpinnerEmpty'
 import { useCountryDetails } from '@/widgets/country-details/model/useCountryDetails'
 
@@ -21,9 +21,9 @@ export function CountryDetails() {
 
   return (
     <>
-      <FetchingIndicator
+      <AnimatedFetchingIndicator
         conditions={!isLoading && isFetching}
-        wrapperClassName='pt-[40px] md:pt-[50px]'
+        className='pt-[40px] md:pt-[50px]'
       />
       {isLoading && (
         <SpinnerEmpty>Loading country with code {countryCode}</SpinnerEmpty>
