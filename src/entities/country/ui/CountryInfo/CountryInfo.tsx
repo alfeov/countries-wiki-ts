@@ -3,9 +3,16 @@ import { motion } from 'motion/react'
 import { Link } from 'react-router'
 
 import type { Country } from '@/entities/country/model/types'
+import noImage from '@/shared/assets/images/no-image.png'
 import { createMotionedComponent, sideVariant } from '@/shared/lib/utils/motion'
 import { Button } from '@/shared/ui/button'
-import { ImageWithLoader } from '@/shared/ui/ImageWithLoader'
+import {
+  Image,
+  ImageOnError,
+  ImageWrapper,
+  Loader,
+  TextOnError,
+} from '@/shared/ui/ImageWithLoader'
 import { Skeleton } from '@/shared/ui/skeleton'
 
 const MotionLink = createMotionedComponent(Link)
@@ -40,15 +47,15 @@ export function CountryInfo({ country, children }: CountryInfoProps) {
         </MotionLink>
         <div className='grid gap-[30px] lg:gap-[40px] lg:grid-cols-2'>
           <motion.div {...sideVariant(-200)}>
-            <ImageWithLoader
-              src={flag.url_png}
-              alt={names.common}
-              noImageText={names.common}
-              aspectRatio='3/2'
-              wrapperClassName='rounded-2xl'
-            >
-              <Skeleton className='w-full bg-muted-foreground dark:bg-muted' />
-            </ImageWithLoader>
+            <ImageWrapper className='rounded-2xl'>
+              <Image src={flag.url_png} alt={names.common}>
+                <Loader>
+                  <Skeleton className='w-full bg-muted-foreground dark:bg-muted' />
+                </Loader>
+                <ImageOnError src={noImage} alt={names.common} />
+                <TextOnError>{names.common}</TextOnError>
+              </Image>
+            </ImageWrapper>
           </motion.div>
           <motion.article
             {...sideVariant(200)}

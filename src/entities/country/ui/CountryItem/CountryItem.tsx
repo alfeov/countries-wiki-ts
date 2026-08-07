@@ -1,6 +1,7 @@
 import { Link } from 'react-router'
 
 import type { CountryItem } from '@/entities/country/model/types'
+import noImage from '@/shared/assets/images/no-image.png'
 import { Button } from '@/shared/ui/button'
 import {
   Card,
@@ -9,7 +10,13 @@ import {
   CardHeader,
   CardTitle,
 } from '@/shared/ui/card'
-import { ImageWithLoader } from '@/shared/ui/ImageWithLoader'
+import {
+  Image,
+  ImageOnError,
+  ImageWrapper,
+  Loader,
+  TextOnError,
+} from '@/shared/ui/ImageWithLoader'
 import { Skeleton } from '@/shared/ui/skeleton'
 
 interface CountryItemProps extends CountryItem {
@@ -21,14 +28,15 @@ export function CountryItem(props: CountryItemProps) {
 
   return (
     <Card className='pt-0' ref={ref}>
-      <ImageWithLoader
-        src={flag.url_png}
-        alt={names.common}
-        noImageText={names.common}
-        aspectRatio='3/2'
-      >
-        <Skeleton className='w-full m-[20px]' />
-      </ImageWithLoader>
+      <ImageWrapper className='rounded-2xl'>
+        <Image src={flag.url_png} alt={names.common}>
+          <Loader>
+            <Skeleton className='w-full m-[20px]' />
+          </Loader>
+          <ImageOnError src={noImage} alt={names.common} />
+          <TextOnError>{names.common}</TextOnError>
+        </Image>
+      </ImageWrapper>
       <CardHeader className='grow'>
         <CardTitle>{names.common}</CardTitle>
         <CardDescription>

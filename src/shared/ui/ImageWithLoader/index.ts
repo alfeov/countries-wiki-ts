@@ -1,1 +1,1 @@
-export { ImageWithLoader } from './ImageWithLoader'
+export * from './ImageWithLoader'
