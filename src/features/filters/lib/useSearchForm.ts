@@ -13,19 +13,18 @@ export function useSearchForm(
 
   function handleSubmit(event: SubmitEvent) {
     event.preventDefault()
-    setError(initialState)
 
     const formattedInput = input.trim()
 
-    // empty search also correct
+    // empty search also correct (reset filters)
     const isEmpty = formattedInput.length === 0
     if (isEmpty || testLatin(formattedInput)) {
       onSubmit(formattedInput)
-      event.target.reset()
+      setError(initialState)
     } else {
       setError({
         isError: true,
-        message: 'This field can contain only latin symbols and spaces',
+        message: 'This field can contain only latin symbols',
       })
     }
   }

@@ -1,5 +1,3 @@
-import { CircleX } from 'lucide-react'
-
 import {
   Empty,
   EmptyDescription,
@@ -7,6 +5,8 @@ import {
   EmptyMedia,
   EmptyTitle,
 } from '@/shared/ui/empty'
+
+import { CircleX } from 'lucide-react'
 
 export function NotFoundPage() {
   return (

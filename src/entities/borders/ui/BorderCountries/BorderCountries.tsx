@@ -1,4 +1,3 @@
-import { ArrowUpRightIcon } from 'lucide-react'
 import { motion } from 'motion/react'
 import { Link } from 'react-router'
 
@@ -13,6 +12,8 @@ import {
 import { Badge } from '@/shared/ui/badge'
 import { ErrorEmpty } from '@/shared/ui/ErrorEmpty'
 import { Skeleton } from '@/shared/ui/skeleton'
+
+import { ArrowUpRightIcon } from 'lucide-react'
 
 const MotionLink = createMotionedComponent(Link)
 

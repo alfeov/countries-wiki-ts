@@ -1,9 +1,7 @@
-import { ArrowLeft } from 'lucide-react'
 import { motion } from 'motion/react'
 import { Link } from 'react-router'
 
 import type { Country } from '@/entities/country/model/types'
-import noImage from '@/shared/assets/images/no-image.png'
 import { createMotionedComponent, sideVariant } from '@/shared/lib/utils/motion'
 import { Button } from '@/shared/ui/button'
 import {
@@ -14,6 +12,9 @@ import {
   TextOnError,
 } from '@/shared/ui/ImageWithLoader'
 import { Skeleton } from '@/shared/ui/skeleton'
+
+import noImage from '@/shared/assets/images/no-image.png'
+import { ArrowLeft } from 'lucide-react'
 
 const MotionLink = createMotionedComponent(Link)
 

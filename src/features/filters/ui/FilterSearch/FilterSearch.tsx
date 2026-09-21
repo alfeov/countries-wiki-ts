@@ -1,4 +1,3 @@
-import { SearchIcon } from 'lucide-react'
 import { motion } from 'motion/react'
 
 import { useSearch } from '@/features/filters/model'
@@ -11,6 +10,8 @@ import {
   InputGroupButton,
   InputGroupInput,
 } from '@/shared/ui/input-group'
+
+import { SearchIcon } from 'lucide-react'
 
 export function FilterSearch() {
   const [search, setSearch] = useSearch()
@@ -40,7 +41,10 @@ export function FilterSearch() {
             </InputGroupButton>
           </InputGroupAddon>
         </InputGroup>
-        <FieldDescription className='h-[1.5em] ml-[5px] text-destructive'>
+        <FieldDescription
+          role='alert'
+          className='h-[1.5em] ml-[5px] text-destructive'
+        >
           {error.message}
         </FieldDescription>
       </Field>

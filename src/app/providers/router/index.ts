@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router'
+import { createBrowserRouter, type RouteObject } from 'react-router'
 
 import { ErrorBoundary } from '@/app/providers/router/ErrorBoundary'
 import { ErrorBoundaryOutlet } from '@/app/providers/router/ErrorBoundaryOutlet/ErrorBoundaryOutlet'
@@ -7,7 +7,7 @@ import { CountryPage } from '@/pages/CountryPage'
 import { Layout } from '@/pages/Layout/Layout'
 import { NotFoundPage } from '@/pages/NotFoundPage'
 
-export const router = createBrowserRouter([
+export const routes: RouteObject[] = [
   {
     path: '/',
     Component: Layout,
@@ -32,4 +32,6 @@ export const router = createBrowserRouter([
       },
     ],
   },
-])
+]
+
+export const router = createBrowserRouter(routes)

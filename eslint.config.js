@@ -33,10 +33,10 @@ export default defineConfig([
         'warn',
         {
           groups: [
-            ['react', '^@?\\w'], // 1. Frameworks
+            ['^@?\\w'], // 1. Frameworks, libs
             ['^@\/'], // 2. FSD
             ['^\\.'], // 3. Relative imports
-            ['css$'], // 4. style imports
+            ['css$', '@/shared/assets', '^lucide'], // 4. style imports, images, icons
           ],
         },
       ],

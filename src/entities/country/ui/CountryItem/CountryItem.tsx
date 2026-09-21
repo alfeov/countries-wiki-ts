@@ -1,7 +1,6 @@
 import { Link } from 'react-router'
 
 import type { CountryItem } from '@/entities/country/model/types'
-import noImage from '@/shared/assets/images/no-image.png'
 import { Button } from '@/shared/ui/button'
 import {
   Card,
@@ -18,6 +17,8 @@ import {
   TextOnError,
 } from '@/shared/ui/ImageWithLoader'
 import { Skeleton } from '@/shared/ui/skeleton'
+
+import noImage from '@/shared/assets/images/no-image.png'
 
 interface CountryItemProps extends CountryItem {
   ref: React.Ref<HTMLDivElement>

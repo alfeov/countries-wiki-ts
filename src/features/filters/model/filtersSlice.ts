@@ -7,7 +7,7 @@ export interface FiltersState {
   region: FilterRegion
 }
 
-const initialState: FiltersState = {
+export const initialState: FiltersState = {
   search: '',
   region: '',
 }

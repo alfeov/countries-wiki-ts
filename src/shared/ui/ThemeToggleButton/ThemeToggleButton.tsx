@@ -1,9 +1,8 @@
-import { Moon, Sun } from 'lucide-react'
-
 import { useToggleTheme } from '@/shared/lib/hooks/useToggleTheme'
 import { Button } from '@/shared/ui/button'
 
 import styles from './ThemeToggleButton.module.css'
+import { Moon, Sun } from 'lucide-react'
 
 export function ThemeToggleButton() {
   const toggleTheme = useToggleTheme()

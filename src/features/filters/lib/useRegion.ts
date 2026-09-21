@@ -5,7 +5,7 @@ import {
   setRegion as setRegionAction,
 } from '@/features/filters/model'
 
-import type { FilterRegion } from './types'
+import type { FilterRegion } from '../model/types'
 
 export function useRegion(): [
   region: typeof region,
