@@ -10,9 +10,12 @@ export function renderWithRedux(
   preloadedState?: PreloadedState,
 ) {
   const mockStore = setupStore(preloadedState)
+  const renderResult = render(
+    <Provider store={mockStore}>{component}</Provider>,
+  )
 
   return {
     mockStore,
-    ...render(<Provider store={mockStore}>{component}</Provider>),
+    ...renderResult,
   }
 }

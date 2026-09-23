@@ -23,14 +23,14 @@ export function CountryDetails() {
     <>
       <AnimatedFetchingIndicator
         conditions={!isLoading && isFetching}
-        className='pt-[40px] md:pt-[50px]'
+        className='pt-10 md:pt-12'
       />
       {isLoading && (
         <SpinnerEmpty>Loading country with code {countryCode}</SpinnerEmpty>
       )}
       {isError && <ErrorEmpty>{formatApiError(error)}</ErrorEmpty>}
       {isSuccess && 'names' in country && (
-        <CountryInfo country={country}>
+        <CountryInfo {...country}>
           {!!country.borders.length && (
             <BorderCountries bordersCodes={country.borders} />
           )}

@@ -18,35 +18,32 @@ import { ArrowLeft } from 'lucide-react'
 
 const MotionLink = createMotionedComponent(Link)
 
-interface CountryInfoProps {
-  country: Country
-  children: React.ReactNode
-}
+export type CountryInfoProps = React.ComponentProps<'div'> &
+  Omit<Country, 'borders' | 'codes'>
 
-export function CountryInfo({ country, children }: CountryInfoProps) {
-  const {
-    flag,
-    names,
-    population,
-    region,
-    subregion,
-    capitals,
-    currencies,
-    timezones,
-    area,
-    languages,
-  } = country
-
+export function CountryInfo({
+  flag,
+  names,
+  population,
+  region,
+  subregion,
+  capitals,
+  currencies,
+  timezones,
+  area,
+  languages,
+  children,
+}: CountryInfoProps) {
   return (
     <>
-      <div className='grid gap-[30px] overflow-hidden'>
+      <div className='grid gap-8 overflow-hidden'>
         <MotionLink to='/' className='w-fit rounded-4xl' {...sideVariant(-200)}>
           <Button tabIndex={-1}>
             <ArrowLeft data-icon='inline-start' />
             Back
           </Button>
         </MotionLink>
-        <div className='grid gap-[30px] lg:gap-[40px] lg:grid-cols-2'>
+        <div className='grid gap-8 lg:gap-10 lg:grid-cols-2'>
           <motion.div {...sideVariant(-200)}>
             <ImageWrapper className='rounded-2xl'>
               <Image src={flag.url_png} alt={names.common}>
@@ -60,12 +57,12 @@ export function CountryInfo({ country, children }: CountryInfoProps) {
           </motion.div>
           <motion.article
             {...sideVariant(200)}
-            className='grid gap-[20px] content-start'
+            className='grid gap-5 content-start'
           >
             <header>
-              <h1 className='text-[30px] font-[600]'>{names.common}</h1>
+              <h1 className='text-[30px] font-semibold'>{names.common}</h1>
             </header>
-            <main className='grid gap-[20px] lg:grid-cols-2'>
+            <main className='grid gap-5 lg:grid-cols-2'>
               <div>
                 <p>
                   <strong>Official Name: </strong>
@@ -101,7 +98,7 @@ export function CountryInfo({ country, children }: CountryInfoProps) {
                 </p>
                 <p>
                   <strong>Timezones: </strong>
-                  {timezones.join(', ')}
+                  {timezones.join(', ') || '-'}
                 </p>
                 <p>
                   <strong>Area: </strong>

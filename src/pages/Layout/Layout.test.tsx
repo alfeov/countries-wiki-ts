@@ -1,21 +1,24 @@
 import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { createMemoryRouter } from 'react-router'
 
-import { routes } from '@/app/providers/router'
-import { renderWithRouter } from '@/test/renderWithRouter'
+import { renderWithProviders } from '@/test/renderWithProviders'
 
 describe('Layout', () => {
-  it('Should navigate to root page on logo click', async () => {
-    const router = createMemoryRouter(routes, {
-      initialEntries: ['/not-found-page'],
-    })
+  it.each(['/', '/some-page', '/some-page/slug'])(
+    'renders on some page relative to /',
+    (route) => {
+      renderWithProviders([route])
 
-    renderWithRouter(router)
+      const link = screen.getByRole('link', { name: /counties wiki/i })
+      expect(link).toBeInTheDocument()
+    },
+  )
+  it('should navigate to CountriesPage when click on logo', async () => {
+    renderWithProviders(['/some-page'])
 
-    const link = screen.getByRole('link')
+    const link = screen.getByRole('link', { name: /counties wiki/i })
     await userEvent.click(link)
 
-    expect(router.state.location.pathname).toBe('/')
+    expect(screen.getByTestId('countries-page')).toBeInTheDocument()
   })
 })

@@ -20,19 +20,25 @@ import { Skeleton } from '@/shared/ui/skeleton'
 
 import noImage from '@/shared/assets/images/no-image.png'
 
-interface CountryItemProps extends CountryItem {
+export interface CountryItemProps extends CountryItem {
   ref: React.Ref<HTMLDivElement>
 }
 
-export function CountryItem(props: CountryItemProps) {
-  const { flag, names, population, region, capitals, codes, ref } = props
-
+export function CountryItem({
+  flag,
+  names,
+  population,
+  region,
+  capitals,
+  codes,
+  ref,
+}: CountryItemProps) {
   return (
     <Card className='pt-0' ref={ref}>
       <ImageWrapper className='rounded-2xl'>
         <Image src={flag.url_png} alt={names.common}>
           <Loader>
-            <Skeleton className='w-full m-[20px]' />
+            <Skeleton className='w-full m-5' />
           </Loader>
           <ImageOnError src={noImage} alt={names.common} />
           <TextOnError>{names.common}</TextOnError>
@@ -49,8 +55,8 @@ export function CountryItem(props: CountryItemProps) {
               <strong>Region:</strong> {region}
             </li>
             <li>
-              <strong>Capital:</strong>{' '}
-              {capitals.map((capital) => capital.name).join(', ')}
+              <strong>Capital: </strong>
+              {capitals.map((capital) => capital.name).join(', ') || '-'}
             </li>
           </ul>
         </CardDescription>

@@ -22,7 +22,7 @@ export interface CountryItem {
   }
   names: CountryItemNames
   population: number
-  region: Omit<Region, ''>
+  region: Region
   capitals: Capital[]
   codes: {
     alpha_3: CountryCode
