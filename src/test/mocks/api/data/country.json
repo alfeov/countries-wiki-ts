@@ -1,0 +1,381 @@
+{
+  "data": {
+    "objects": [
+      {
+        "names": {
+          "alternates": [
+            "Bielaruś",
+            "Белоруссия",
+            "Республика Белоруссия",
+            "Byelorussia"
+          ],
+          "common": "Belarus",
+          "native": {
+            "bel": {
+              "common": "Белару́сь",
+              "official": "Рэспубліка Беларусь"
+            },
+            "rus": {
+              "common": "Беларусь",
+              "official": "Республика Беларусь"
+            }
+          },
+          "official": "Republic of Belarus",
+          "translations": {
+            "ara": {
+              "common": "بيلاروسيا",
+              "official": "جمهورية بيلاروسيا"
+            },
+            "bre": {
+              "common": "Belarus",
+              "official": "Republik Belarus"
+            },
+            "ces": {
+              "common": "Bělorusko",
+              "official": "Běloruská republika"
+            },
+            "cym": {
+              "common": "Belarws",
+              "official": "Gweriniaeth Belarws"
+            },
+            "deu": {
+              "common": "Weißrussland",
+              "official": "Republik Belarus"
+            },
+            "est": {
+              "common": "Valgevene",
+              "official": "Valgevene Vabariik"
+            },
+            "fas": {
+              "common": "بلاروس",
+              "official": "جمهوری بلاروس"
+            },
+            "fin": {
+              "common": "Valko-Venäjä",
+              "official": "Valko-Venäjän tasavalta"
+            },
+            "fra": {
+              "common": "Biélorussie",
+              "official": "République de Biélorussie"
+            },
+            "hrv": {
+              "common": "Bjelorusija",
+              "official": "Republika Bjelorusija"
+            },
+            "hun": {
+              "common": "Fehéroroszország",
+              "official": "Fehérorosz Köztársaság"
+            },
+            "ind": {
+              "common": "Belarus",
+              "official": "Republik Belarus"
+            },
+            "ita": {
+              "common": "Bielorussia",
+              "official": "Repubblica di Belarus"
+            },
+            "jpn": {
+              "common": "ベラルーシ",
+              "official": "ベラルーシ共和国"
+            },
+            "kor": {
+              "common": "벨라루스",
+              "official": "벨라루스 공화국"
+            },
+            "nld": {
+              "common": "Wit-Rusland",
+              "official": "Republiek Belarus"
+            },
+            "pol": {
+              "common": "Białoruś",
+              "official": "Republika Białorusi"
+            },
+            "por": {
+              "common": "Bielorússia",
+              "official": "República da Bielorrússia"
+            },
+            "rus": {
+              "common": "Беларусь",
+              "official": "Республика Беларусь"
+            },
+            "slk": {
+              "common": "Bielorusko",
+              "official": "Bieloruská republika"
+            },
+            "spa": {
+              "common": "Bielorrusia",
+              "official": "República de Belarús"
+            },
+            "srp": {
+              "common": "Белорусија",
+              "official": "Република Белорусија"
+            },
+            "swe": {
+              "common": "Belarus",
+              "official": "Republiken Vitryssland"
+            },
+            "tur": {
+              "common": "Belarus",
+              "official": "Belarus Cumhuriyeti"
+            },
+            "urd": {
+              "common": "بیلاروس",
+              "official": "جمہوریہ بیلاروس"
+            },
+            "zho": {
+              "common": "白俄罗斯",
+              "official": "白俄罗斯共和国"
+            }
+          }
+        },
+        "codes": {
+          "alpha_2": "BY",
+          "alpha_3": "BLR",
+          "ccn3": "112",
+          "cioc": "BLR",
+          "fifa": "BLR",
+          "fips": "BO",
+          "gec": "BO"
+        },
+        "capitals": [
+          {
+            "attributes": {
+              "administrative": false,
+              "constitutional": false,
+              "executive": false,
+              "judicial": false,
+              "legislative": false,
+              "primary": true
+            },
+            "coordinates": {
+              "lat": 53.9,
+              "lng": 27.57
+            },
+            "name": "Minsk"
+          }
+        ],
+        "flag": {
+          "colors": {
+            "dominant": "#007d3b",
+            "palette": [
+              {
+                "hex": "#007d3b",
+                "proportion": 0.28959414098260605
+              },
+              {
+                "hex": "#cd1f1c",
+                "proportion": 0.6426609703997559
+              },
+              {
+                "hex": "#fae7e0",
+                "proportion": 0.04333231614281355
+              },
+              {
+                "hex": "#57642b",
+                "proportion": 0.007628928898382667
+              },
+              {
+                "hex": "#fff9fb",
+                "proportion": 0.0015257857796765334
+              },
+              {
+                "hex": "#e68388",
+                "proportion": 0.009765028989929814
+              },
+              {
+                "hex": "#dc5e6a",
+                "proportion": 0.00274641440341776
+              },
+              {
+                "hex": "#dd5564",
+                "proportion": 0.00274641440341776
+              }
+            ],
+            "prominent": "#cd1f1c",
+            "swatches": {
+              "dark_muted": null,
+              "dark_vibrant": null,
+              "light_muted": "#fae7e0",
+              "light_vibrant": null,
+              "muted": "#e68388",
+              "vibrant": "#cd1f1c"
+            }
+          },
+          "description": "The flag of Belarus features a vertical band, with a white and red ornamental pattern, spanning about one-ninth the width of the field on the hoist side. Adjoining the vertical band are two horizontal bands of red and green, with the red band twice the height of the green band.",
+          "emoji": "🇧🇾",
+          "html_entity": "&#127463;&#127486;",
+          "unicode": "U+1F1E7 U+1F1FE",
+          "url_png": "https://flags.restcountries.com/v5/w640/by.png",
+          "url_svg": "https://flags.restcountries.com/v5/svg/by.svg"
+        },
+        "region": "Europe",
+        "subregion": "Eastern Europe",
+        "area": {
+          "kilometers": 207600,
+          "miles": 80154.8
+        },
+        "assets": [],
+        "borders": ["LVA", "LTU", "POL", "RUS", "UKR"],
+        "calling_codes": ["375"],
+        "cars": {
+          "driving_side": "right",
+          "signs": ["BY"]
+        },
+        "classification": {
+          "dependency": false,
+          "dependency_type": "",
+          "disputed": false,
+          "iso_status": "official",
+          "sovereign": true,
+          "un_member": true,
+          "un_observer": false
+        },
+        "continents": ["Europe"],
+        "coordinates": {
+          "lat": 53,
+          "lng": 28
+        },
+        "currencies": [
+          {
+            "code": "BYN",
+            "name": "Belarusian ruble",
+            "symbol": "Br"
+          }
+        ],
+        "date": {
+          "academic_year_start": {
+            "day": 1,
+            "month": 9
+          },
+          "fiscal_year_start": {
+            "corporate": {
+              "basis": "convention",
+              "day": 1,
+              "month": 1
+            },
+            "government": {
+              "day": 1,
+              "month": 1
+            },
+            "personal": {
+              "day": 1,
+              "month": 1
+            }
+          },
+          "start_of_week": "monday"
+        },
+        "demonyms": {
+          "eng": {
+            "f": "Belarusian",
+            "m": "Belarusian"
+          },
+          "fra": {
+            "f": "Biélorusse",
+            "m": "Biélorusse"
+          }
+        },
+        "descriptions": {
+          "long": "Belarus is a republic with Minsk as its capital and Belarusian and Russian as official languages. The Belarusian ruble is the currency, a large share of industry remains state-owned, and potash, fuels and machinery lead its exports.",
+          "short": "Belarus is a landlocked republic bordered by Russia, Ukraine, Poland, Lithuania and Latvia."
+        },
+        "economy": {
+          "gini_coefficient": {
+            "2016": 25.3,
+            "2017": 25.4,
+            "2018": 25.2,
+            "2019": 25.3,
+            "2020": 24.4
+          }
+        },
+        "government_type": "Unitary semi-presidential republic under an authoritarian dictatorship",
+        "landlocked": true,
+        "languages": [
+          {
+            "bcp47": "be",
+            "iso639_1": "be",
+            "iso639_2b": "bel",
+            "iso639_2t": "bel",
+            "iso639_3": "bel",
+            "name": "Belarusian",
+            "native_name": "беларуская мова"
+          },
+          {
+            "bcp47": "ru",
+            "iso639_1": "ru",
+            "iso639_2b": "rus",
+            "iso639_2t": "rus",
+            "iso639_3": "rus",
+            "name": "Russian",
+            "native_name": "русский"
+          }
+        ],
+        "leaders": [
+          {
+            "message": "data.leaders is only available on paid plans. Go to https://restcountries.com/plans to make updates to your account.",
+            "sample": "https://files-03.restcountries.com/countries.00/sample.leaders.json"
+          }
+        ],
+        "links": {
+          "google_maps": "https://goo.gl/maps/PJUDU3EBPSszCQcu6",
+          "official": "https://president.gov.by",
+          "open_street_maps": "https://www.openstreetmap.org/relation/59065",
+          "wikipedia": "https://en.wikipedia.org/wiki/Belarus"
+        },
+        "memberships": {
+          "african_union": false,
+          "arab_league": false,
+          "asean": false,
+          "brics": false,
+          "commonwealth": false,
+          "eu": false,
+          "eurozone": false,
+          "g20": false,
+          "g7": false,
+          "nato": false,
+          "oecd": false,
+          "opec": false,
+          "schengen": false,
+          "un": true
+        },
+        "number_format": {
+          "decimal_separator": ",",
+          "thousands_separator": "."
+        },
+        "parent": {
+          "alpha_2": "",
+          "alpha_3": ""
+        },
+        "population": 9056080,
+        "postal_code": {
+          "format": "######",
+          "regex": "^(\\d{6})$"
+        },
+        "timezones": ["UTC+03:00"],
+        "tlds": [".by"],
+        "units": {
+          "measurement_system": "metric",
+          "temperature_scale": "Celsius"
+        },
+        "uuid": "fc8d45f5-d6b5-4381-929f-10aebc913e8a",
+        "_match": [
+          {
+            "path": "codes.alpha_3",
+            "value": "BLR"
+          }
+        ],
+        "_meta": {
+          "lastUpdatedTimestamp": 1788724017
+        }
+      }
+    ],
+    "meta": {
+      "total": 1,
+      "count": 1,
+      "limit": 25,
+      "offset": 0,
+      "more": false,
+      "request_id": "95eaebac-4529-4407-9e0d-7600ab2013bf",
+      "duration": 103
+    }
+  }
+}

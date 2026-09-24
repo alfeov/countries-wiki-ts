@@ -52,7 +52,7 @@ describe('FilterSearch', () => {
     expect(mockStore.getState().filters.search).toBe('')
   })
 
-  describe('error when using non latin characters:', () => {
+  describe('show error text when using non latin characters:', () => {
     it('number', async () => {
       await userEvent.type(searchInput, '123')
       await userEvent.click(submitBtn)

@@ -1,6 +1,10 @@
 import { cleanup } from '@testing-library/react'
 
+import { server } from './mocks/api/server'
+
 import '@testing-library/jest-dom/vitest'
+
+beforeAll(() => server.listen())
 
 beforeEach(() => {
   Object.defineProperty(window, 'matchMedia', {
@@ -22,5 +26,8 @@ beforeEach(() => {
 
 afterEach(() => {
   cleanup()
-  vi.resetAllMocks()
+  vi.clearAllMocks()
+  server.resetHandlers()
 })
+
+afterAll(() => server.close())

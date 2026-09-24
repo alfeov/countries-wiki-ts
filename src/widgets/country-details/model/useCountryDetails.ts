@@ -6,7 +6,7 @@ import { useGetCountryDetailsQuery } from '@/widgets/country-details/api/country
 export function useCountryDetails() {
   const params = useParams()
   const countryCode = params.countryAlpha3Code
-  // at moment of writing project country with code '' is exist in API (check in shared/mock)
+  // at moment of writing project country with code '' is exist in API (check in test/mocks/api/data.json)
   const country = useGetCountryDetailsQuery(countryCode ?? '', {
     selectFromResult: ({ data, ...rest }) => ({
       ...rest,

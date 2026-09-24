@@ -62,7 +62,7 @@ export function CountryItem({
         </CardDescription>
       </CardHeader>
       <CardFooter>
-        <Link to={codes.alpha_3} className='w-full rounded-4xl'>
+        <Link to={'/' + codes.alpha_3} className='w-full rounded-4xl'>
           <Button className='w-full' tabIndex={-1}>
             View Details
           </Button>

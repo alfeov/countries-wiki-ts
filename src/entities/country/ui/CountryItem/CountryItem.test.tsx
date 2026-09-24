@@ -1,5 +1,4 @@
 import { screen } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
 
 import { renderWithRouter } from '@/test/renderWithRouter'
 
@@ -16,12 +15,12 @@ const defaultProps: CountryItemProps = {
 }
 
 describe('CountryItem', () => {
-  it('should display formatted population', () => {
+  it('display formatted population', () => {
     renderWithRouter(undefined, <CountryItem {...defaultProps} />)
     expect(screen.getByText('9,109,280')).toBeInTheDocument()
   })
 
-  it('should display multiple capitals separated by commas', () => {
+  it('display multiple capitals separated by commas', () => {
     renderWithRouter(
       undefined,
       <CountryItem
@@ -32,22 +31,21 @@ describe('CountryItem', () => {
     expect(screen.getByText('Minsk, Pinsk')).toBeInTheDocument()
   })
 
-  it('should display "-" if capitals is missing', () => {
+  it('display "-" if capitals is missing', () => {
     renderWithRouter(undefined, <CountryItem {...defaultProps} capitals={[]} />)
     expect(screen.getByText('Capital:').closest('li')).toHaveTextContent(
       'Capital: -',
     )
   })
 
-  it('link "View Details" should navigate to country details page', async () => {
+  it('link should navigate to details page', async () => {
     const { router } = renderWithRouter(
       undefined,
       <CountryItem {...defaultProps} codes={{ alpha_3: 'BLR' }} />,
     )
 
     const link = screen.getByRole('link', { name: /view details/i })
-    await userEvent.click(link)
 
-    expect(router.state.location.pathname).toContain('BLR')
+    expect(link).toHaveAttribute('href', '/BLR')
   })
 })

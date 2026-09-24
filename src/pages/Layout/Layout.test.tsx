@@ -5,7 +5,7 @@ import { renderWithProviders } from '@/test/renderWithProviders'
 
 describe('Layout', () => {
   it.each(['/', '/some-page', '/some-page/slug'])(
-    'renders on some page relative to /',
+    'renders on some page relative to /: %s',
     (route) => {
       renderWithProviders([route])
 
