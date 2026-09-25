@@ -5,7 +5,7 @@ import { CountriesList } from '@/widgets/countries/ui/CountriesList'
 
 export function CountriesPage() {
   return (
-    <div className='flex gap-5 flex-col' data-testid='countries-page'>
+    <div className='flex gap-5 flex-col grow' data-testid='countries-page'>
       <FilterGroup>
         <FilterSearch />
         <FilterRegion />

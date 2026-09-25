@@ -26,33 +26,30 @@ export function BorderCountries({ bordersCodes }: BorderCountriesProps) {
     useBorders(bordersCodes)
 
   return (
-    <footer className='grid gap-[20px]'>
-      <h2 className='text-[24px] font-[600]'>Border Countries:</h2>
-      <motion.div {...listVariant()} className='flex flex-wrap gap-[10px]'>
-        {isFetching &&
-          bordersCodes?.map((border) => (
-            <Skeleton
-              className='h-[26px] w-[100px] rounded-3xl p-[12px] bg-muted-foreground dark:bg-muted'
-              key={border + 'skeleton'}
-            />
-          ))}
-        {isError && <ErrorEmpty>{formatApiError(error)}</ErrorEmpty>}
-        {isSuccess &&
-          !isFetching && // for prevent previous result showing
-          borders.map((country) => (
-            <MotionLink
-              variants={itemVariants}
-              to={'/' + country?.codes.alpha_3}
-              key={country?.codes.alpha_3}
-              className='w-fit rounded-3xl'
-            >
-              <Badge className='text-[14px] p-[12px] h-[26px]'>
-                {country?.names.common}
-                <ArrowUpRightIcon data-icon='inline-end' />
-              </Badge>
-            </MotionLink>
-          ))}
-      </motion.div>
-    </footer>
+    <motion.div {...listVariant()} className='flex flex-wrap gap-3'>
+      {isFetching &&
+        bordersCodes?.map((border) => (
+          <Skeleton
+            className='h-7 w-25 rounded-3xl p-3 bg-muted-foreground dark:bg-muted'
+            key={border + 'skeleton'}
+          />
+        ))}
+      {isError && <ErrorEmpty>{formatApiError(error)}</ErrorEmpty>}
+      {isSuccess &&
+        !isFetching && // for prevent previous result showing
+        borders.map((country) => (
+          <MotionLink
+            variants={itemVariants}
+            to={'/' + country?.codes.alpha_3}
+            key={country?.codes.alpha_3}
+            className='w-fit rounded-3xl'
+          >
+            <Badge className='text-[14px] p-3 h-7'>
+              {country?.names.common}
+              <ArrowUpRightIcon data-icon='inline-end' />
+            </Badge>
+          </MotionLink>
+        ))}
+    </motion.div>
   )
 }

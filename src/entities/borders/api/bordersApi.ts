@@ -81,10 +81,3 @@ const bordersApi = api.injectEndpoints({
 })
 
 export const { useGetBordersNamesQuery } = bordersApi
-
-// queryFn: async () => {
-//   await wait(3000)
-//   const result1 = { objects: [data.data.objects[2]] }
-//   const result2 = { objects: [data.data.objects[3]] }
-//   return { data: [result1, result2] }
-// },

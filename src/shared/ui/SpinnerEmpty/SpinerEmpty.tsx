@@ -9,7 +9,7 @@ import { Spinner } from '@/shared/ui/spinner'
 
 export function SpinnerEmpty({ children }: { children: React.ReactNode }) {
   return (
-    <Empty className='w-full'>
+    <Empty className='w-full h-full'>
       <EmptyHeader>
         <EmptyMedia variant='icon'>
           <Spinner className='size-6' />

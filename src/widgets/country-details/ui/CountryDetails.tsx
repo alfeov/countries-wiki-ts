@@ -29,14 +29,17 @@ export function CountryDetails() {
         <SpinnerEmpty>Loading country with code {countryCode}</SpinnerEmpty>
       )}
       {isError && <ErrorEmpty>{formatApiError(error)}</ErrorEmpty>}
-      {isSuccess && 'names' in country && (
+      {isSuccess && country && (
         <CountryInfo {...country}>
-          {!!country.borders.length && (
-            <BorderCountries bordersCodes={country.borders} />
+          {Boolean(country.borders.length) && (
+            <footer className='grid gap-5'>
+              <h2 className='text-[24px] font-semibold'>Border Countries:</h2>
+              <BorderCountries bordersCodes={country.borders} />
+            </footer>
           )}
         </CountryInfo>
       )}
-      {isSuccess && !isLoading && !('names' in country) && (
+      {isSuccess && !country && (
         <ErrorEmpty>Country with code {countryCode} not found (404)</ErrorEmpty>
       )}
     </>

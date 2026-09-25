@@ -1,9 +1,9 @@
-export interface ResultType<T> {
-  objects: T | never[]
+export interface ResultType<T extends unknown[]> {
+  objects: T
   meta: Meta
 }
 
-export interface RawResultType<T> {
+export interface RawResultType<T extends unknown[]> {
   data: ResultType<T>
 }
 

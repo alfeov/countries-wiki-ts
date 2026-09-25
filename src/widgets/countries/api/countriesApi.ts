@@ -67,8 +67,3 @@ const countriesApi = api.injectEndpoints({
 })
 
 export const { useGetCountriesInfiniteQuery } = countriesApi
-
-// queryFn: async () => {
-//   await wait(1000)
-//   return { data: data.data }
-// },

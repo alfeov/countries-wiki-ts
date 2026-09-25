@@ -16,10 +16,3 @@ const countryDetailsApi = api.injectEndpoints({
 })
 
 export const { useGetCountryDetailsQuery } = countryDetailsApi
-
-// import data from '@/test/mocks/api/data/country.json'
-// import { wait } from '../helpers/wait'
-// queryFn: async () => {
-//   await wait(3000)
-//   return { data: data.data }
-// },

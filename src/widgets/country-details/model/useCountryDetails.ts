@@ -1,16 +1,15 @@
+import { skipToken } from '@reduxjs/toolkit/query'
 import { useParams } from 'react-router'
 
-import { getOrDefault } from '@/shared/lib/utils/getOrDefault'
 import { useGetCountryDetailsQuery } from '@/widgets/country-details/api/countryDetailsApi'
 
 export function useCountryDetails() {
   const params = useParams()
   const countryCode = params.countryAlpha3Code
-  // at moment of writing project country with code '' is exist in API (check in test/mocks/api/data.json)
-  const country = useGetCountryDetailsQuery(countryCode ?? '', {
+  const country = useGetCountryDetailsQuery(countryCode ?? skipToken, {
     selectFromResult: ({ data, ...rest }) => ({
       ...rest,
-      country: getOrDefault(data?.objects?.[0], {}),
+      country: data?.objects.length ? data.objects[0] : null,
     }),
   })
   return { ...country, countryCode }

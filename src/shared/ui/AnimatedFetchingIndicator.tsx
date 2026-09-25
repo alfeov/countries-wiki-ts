@@ -30,7 +30,7 @@ export function AnimatedFetchingIndicator({
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -40, opacity: 0 }}
               >
-                <Spinner className='size-6' />
+                <Spinner className='size-6' data-testid='fetching-indicator' />
               </motion.div>
             )}
           </AnimatePresence>
