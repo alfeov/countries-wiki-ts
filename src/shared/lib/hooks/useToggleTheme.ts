@@ -6,7 +6,7 @@ import {
   setLocalStorageData,
 } from '@/shared/lib/utils/localStorage'
 
-const themeKey = 'countries-wiki/isDarkTheme'
+export const themeKey = 'countries-wiki/isDarkTheme'
 
 function initialState() {
   return getLocalStorageData<boolean>(themeKey) ?? isPreferredDarkTheme()

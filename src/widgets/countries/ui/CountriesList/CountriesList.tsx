@@ -32,8 +32,8 @@ export function CountriesList() {
   return (
     <>
       <AnimatedFetchingIndicator
-        conditions={!isLoading && isFetching}
-        className='pt-[70px] md:pt-[145px]'
+        condition={!isLoading && isFetching}
+        className='pt-17.5 md:pt-36'
       />
       {isLoading && <SpinnerEmpty>Loading countries</SpinnerEmpty>}
       {isError && <ErrorEmpty>{formatApiError(error)}</ErrorEmpty>}

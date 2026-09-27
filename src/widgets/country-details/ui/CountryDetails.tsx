@@ -22,7 +22,7 @@ export function CountryDetails() {
   return (
     <>
       <AnimatedFetchingIndicator
-        conditions={!isLoading && isFetching}
+        condition={!isLoading && isFetching}
         className='pt-10 md:pt-12'
       />
       {isLoading && (

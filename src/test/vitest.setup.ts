@@ -20,7 +20,7 @@ beforeEach(() => {
   })
   Object.defineProperty(window, 'scrollTo', {
     writable: true,
-    value: () => {},
+    value: vi.fn(),
   })
 })
 

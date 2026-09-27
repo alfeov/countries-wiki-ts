@@ -1,19 +1,18 @@
-import { screen } from '@testing-library/react'
+import { screen, waitFor } from '@testing-library/react'
 import { http, HttpResponse } from 'msw'
 
-import { useScrollToTop } from '@/shared/lib/hooks/useScrollToTop'
 import { server } from '@/test/mocks/api/server'
 import { renderWithProviders } from '@/test/renderWithProviders'
 
 const API_URL = import.meta.env.VITE_API_URL
 
-vi.mock('@/shared/lib/hooks/useScrollToTop', { spy: true })
-
 describe('CountryDetails', () => {
-  it('should call useScrollToTop', () => {
+  it('should scroll to top on navigation', async () => {
+    const spy = vi.spyOn(window, 'scrollTo')
+
     renderWithProviders(['/BLR'])
 
-    expect(useScrollToTop).toHaveBeenCalled()
+    await waitFor(() => expect(spy).toHaveBeenCalledOnce())
   })
   it('should render loading indicator with country code param on initial loading', () => {
     renderWithProviders(['/BLR'])

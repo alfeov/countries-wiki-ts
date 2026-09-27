@@ -8,23 +8,23 @@ import {
 //! set body position relative
 
 export interface FetchingIndicatorProps {
-  conditions: boolean
+  condition: boolean
   className: string
 }
 
 export function FetchingIndicator({
   className,
-  conditions,
+  condition,
 }: FetchingIndicatorProps) {
   return (
     <>
-      {conditions && (
+      {condition && (
         <StickyPortalWrapper>
           <AbsoluteWrapper
             className={`left-[50%] translate-x-[-50%] ${className}`}
           >
-            <StickyWrapper className='top-[40px]'>
-              <div className='bg-input dark:bg-chart-4 rounded-2xl p-[5px]'>
+            <StickyWrapper className='top-10'>
+              <div className='bg-input dark:bg-chart-4 rounded-2xl p-1'>
                 <Spinner className='size-6' />
               </div>
             </StickyWrapper>

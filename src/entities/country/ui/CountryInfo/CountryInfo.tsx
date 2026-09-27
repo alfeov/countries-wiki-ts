@@ -2,8 +2,9 @@ import { motion } from 'motion/react'
 import { Link } from 'react-router'
 
 import type { Country } from '@/entities/country/model/types'
+import { cn } from '@/shared/lib/utils'
 import { createMotionedComponent, sideVariant } from '@/shared/lib/utils/motion'
-import { Button } from '@/shared/ui/button'
+import { buttonVariants } from '@/shared/ui/button'
 import {
   Image,
   ImageOnError,
@@ -37,11 +38,13 @@ export function CountryInfo({
   return (
     <>
       <div className='grid gap-8 overflow-hidden'>
-        <MotionLink to='/' className='w-fit rounded-4xl' {...sideVariant(-200)}>
-          <Button tabIndex={-1}>
-            <ArrowLeft data-icon='inline-start' />
-            Back
-          </Button>
+        <MotionLink
+          to='/'
+          className={cn(buttonVariants(), 'w-fit')}
+          {...sideVariant(-200)}
+        >
+          <ArrowLeft data-icon='inline-start' />
+          Back
         </MotionLink>
         <div className='grid gap-8 lg:gap-10 lg:grid-cols-2'>
           <motion.div {...sideVariant(-200)}>

@@ -75,7 +75,7 @@ describe('CountryInfo', () => {
     )
   })
 
-  it('should navigate to CountriesPage when clicked on Back btn ', async () => {
+  it('should navigate to CountriesPage when clicked on Back link', async () => {
     renderWithProviders(undefined, undefined, <CountryInfo {...defaultProp} />)
 
     const link = screen.getByRole('link', { name: /back/i })
