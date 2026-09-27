@@ -13,11 +13,11 @@ interface TempResult {
   error: FetchBaseQueryError
 }
 
-const bordersApi = api.injectEndpoints({
+export const bordersApi = api.injectEndpoints({
   endpoints: (build) => ({
     getBordersNames: build.query<ResultType<Border[]>[], BorderCode[]>({
       queryFn: async (
-        bordersCodes,
+        borderCodes,
         _,
         __,
         fetchWithBQ: (
@@ -30,7 +30,9 @@ const bordersApi = api.injectEndpoints({
           >
         >,
       ) => {
-        const promises = bordersCodes.map((code) =>
+        if (borderCodes.length === 0) return { data: [] }
+
+        const promises = borderCodes.map((code) =>
           fetchWithBQ({
             url: `/codes.alpha_3/${code}`,
             params: {
@@ -42,8 +44,7 @@ const bordersApi = api.injectEndpoints({
         const result: TempResult = {
           error: {
             status: 'CUSTOM_ERROR',
-            error:
-              'No data (Possible 404) / Failed to destructuring data (bordersApi)',
+            error: 'Failed to get borders data',
           },
         }
 
@@ -55,22 +56,7 @@ const bordersApi = api.injectEndpoints({
             return { error: queryError }
           }
 
-          const rawResultData = queryReturnValue.data
-          if (rawResultData) {
-            const resultData = rawResultData.data
-            result.data = [...(result?.data ?? []), resultData]
-          } else {
-            return {
-              error: {
-                status: 'CUSTOM_ERROR',
-                error: 'Failed destructuring data in bordersApi (bordersApi)',
-              },
-            }
-          }
-        }
-
-        if (result.data?.length !== bordersCodes.length) {
-          console.error('Input data length not according to output data length')
+          result.data = [...(result?.data ?? []), queryReturnValue.data?.data]
         }
 
         return result.data ? { data: result.data } : { error: result.error }

@@ -1,8 +1,9 @@
+import { spyOnConsoleError } from '@/test/vitest.setup'
+
 import { getLocalStorageData, setLocalStorageData } from './localStorage'
 
 const spyOnGetItem = vi.spyOn(Storage.prototype, 'getItem')
 const spyOnSetItem = vi.spyOn(Storage.prototype, 'setItem')
-const spyOnConsoleError = vi.spyOn(console, 'error').mockImplementation(vi.fn())
 
 const localStorageKey = 'key'
 

@@ -5,7 +5,7 @@ import ATA from '@/test/mocks/api/data/country-ata.json'
 import BLR from '@/test/mocks/api/data/country-blr.json'
 import notFound from '@/test/mocks/api/data/not-found.json'
 
-const API_URL = import.meta.env.VITE_API_URL
+export const API_URL = import.meta.env.VITE_API_URL
 
 export const handlers = [
   http.get(API_URL, () => {

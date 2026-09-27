@@ -38,8 +38,8 @@ describe('CountryItem', () => {
     )
   })
 
-  it('link should navigate to details page', async () => {
-    const { router } = renderWithRouter(
+  it('link should have href to details page', async () => {
+    renderWithRouter(
       undefined,
       <CountryItem {...defaultProps} codes={{ alpha_3: 'BLR' }} />,
     )

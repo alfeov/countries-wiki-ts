@@ -1,10 +1,9 @@
 import { screen, waitFor } from '@testing-library/react'
 import { http, HttpResponse } from 'msw'
 
+import { API_URL } from '@/test/mocks/api/handlers'
 import { server } from '@/test/mocks/api/server'
 import { renderWithProviders } from '@/test/renderWithProviders'
-
-const API_URL = import.meta.env.VITE_API_URL
 
 describe('CountryDetails', () => {
   it('should scroll to top on navigation', async () => {

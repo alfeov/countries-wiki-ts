@@ -34,7 +34,7 @@ export function CountryDetails() {
           {Boolean(country.borders.length) && (
             <footer className='grid gap-5'>
               <h2 className='text-[24px] font-semibold'>Border Countries:</h2>
-              <BorderCountries bordersCodes={country.borders} />
+              <BorderCountries borderCodes={country.borders} />
             </footer>
           )}
         </CountryInfo>

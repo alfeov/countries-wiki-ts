@@ -4,6 +4,10 @@ import { server } from './mocks/api/server'
 
 import '@testing-library/jest-dom/vitest'
 
+export const spyOnConsoleError = vi
+  .spyOn(console, 'error')
+  .mockImplementation(vi.fn())
+
 beforeAll(() => server.listen())
 
 beforeEach(() => {

@@ -6,7 +6,7 @@ import { type PreloadedState, setupStore } from '@/app/providers/store'
 export type StoreType = ReturnType<typeof setupStore>
 
 export function renderWithRedux(
-  component: React.ReactNode,
+  component: React.ReactNode = null,
   preloadedState?: PreloadedState,
 ) {
   const mockStore = setupStore(preloadedState)

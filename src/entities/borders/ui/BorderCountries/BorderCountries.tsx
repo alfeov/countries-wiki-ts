@@ -18,18 +18,19 @@ import { ArrowUpRightIcon } from 'lucide-react'
 const MotionLink = createMotionedComponent(Link)
 
 interface BorderCountriesProps {
-  bordersCodes: BorderCode[]
+  borderCodes: BorderCode[]
 }
 
-export function BorderCountries({ bordersCodes }: BorderCountriesProps) {
+export function BorderCountries({ borderCodes }: BorderCountriesProps) {
   const { borders, isError, isFetching, isSuccess, error } =
-    useBorders(bordersCodes)
+    useBorders(borderCodes)
 
   return (
     <motion.div {...listVariant()} className='flex flex-wrap gap-3'>
       {isFetching &&
-        bordersCodes?.map((border) => (
+        borderCodes?.map((border) => (
           <Skeleton
+            data-testid='skeleton'
             className='h-7 w-25 rounded-3xl p-3 bg-muted-foreground dark:bg-muted'
             key={border + 'skeleton'}
           />
