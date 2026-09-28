@@ -18,7 +18,7 @@ interface Params extends InitialPageParam {
 const initialOffset = 0
 export const limit = 25
 
-const countriesApi = api.injectEndpoints({
+export const countriesApi = api.injectEndpoints({
   endpoints: (build) => ({
     getCountries: build.infiniteQuery<
       ResultType<CountryItem[]>,
@@ -33,7 +33,7 @@ const countriesApi = api.injectEndpoints({
         },
         getNextPageParam: (lastPage, _, lastPageParam) => {
           const nextOffset = lastPageParam.offset + lastPageParam.limit
-          const remainingItems = lastPage?.meta.total - nextOffset
+          const remainingItems = lastPage.meta.total - nextOffset
 
           if (remainingItems <= 0) {
             return undefined
