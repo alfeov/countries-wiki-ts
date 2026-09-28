@@ -20,9 +20,7 @@ import { Skeleton } from '@/shared/ui/skeleton'
 
 import noImage from '@/shared/assets/images/no-image.png'
 
-export interface CountryItemProps extends CountryItem {
-  ref: React.Ref<HTMLDivElement>
-}
+export type CountryItemProps = CountryItem & React.ComponentProps<'div'>
 
 export function CountryItem({
   flag,
@@ -31,10 +29,10 @@ export function CountryItem({
   region,
   capitals,
   codes,
-  ref,
+  ...props
 }: CountryItemProps) {
   return (
-    <Card className='pt-0' ref={ref}>
+    <Card className='pt-0' {...props}>
       <ImageWrapper className='rounded-2xl'>
         <Image src={flag.url_png} alt={names.common}>
           <Loader>

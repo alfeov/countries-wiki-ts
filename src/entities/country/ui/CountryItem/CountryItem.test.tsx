@@ -10,7 +10,6 @@ const defaultProps: CountryItemProps = {
   flag: { url_png: 'unknown' },
   names: { common: 'Belarus' },
   population: 9109280,
-  ref: null,
   region: 'Europe',
 }
 

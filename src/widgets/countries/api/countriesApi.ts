@@ -15,6 +15,9 @@ interface Params extends InitialPageParam {
   region?: FilterRegion
 }
 
+const initialOffset = 0
+export const limit = 25
+
 const countriesApi = api.injectEndpoints({
   endpoints: (build) => ({
     getCountries: build.infiniteQuery<
@@ -25,8 +28,8 @@ const countriesApi = api.injectEndpoints({
     >({
       infiniteQueryOptions: {
         initialPageParam: {
-          offset: 0,
-          limit: 25,
+          offset: initialOffset,
+          limit,
         },
         getNextPageParam: (lastPage, _, lastPageParam) => {
           const nextOffset = lastPageParam.offset + lastPageParam.limit

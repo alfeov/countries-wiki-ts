@@ -46,6 +46,7 @@ export function CountriesList() {
             <MotionCountryItem
               variants={itemVariants}
               key={country.codes.alpha_3}
+              data-testid='listitem'
               {...country}
             />
           ))}
