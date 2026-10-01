@@ -1,14 +1,6 @@
 import { createContext, use, useState } from 'react'
 
-import styles from './ImageWithLoader.module.css'
-
-// ImageWrapper
-//  Image
-//   Loader
-//   ImageOnError
-//   TextOnError
-//  Image
-// ImageWrapper
+import styles from './Image.module.css'
 
 interface Value {
   isLoading: boolean
@@ -87,7 +79,7 @@ export function ImageWrapper({
   )
 }
 
-export function ImageOnError({
+export function FallbackImage({
   src,
   alt,
   className = '',
@@ -107,7 +99,7 @@ export function ImageOnError({
   )
 }
 
-export function TextOnError({ children }: { children: React.ReactNode }) {
+export function FallbackText({ children }: { children: React.ReactNode }) {
   const imageContext = use(ImageContext)
 
   return imageContext?.isError && <p className={styles.noImgText}>{children}</p>
@@ -115,5 +107,9 @@ export function TextOnError({ children }: { children: React.ReactNode }) {
 
 export function Loader({ children }: { children: React.ReactNode }) {
   const imageContext = use(ImageContext)
-  return imageContext?.isLoading && children
+  return (
+    imageContext?.isLoading && (
+      <div className='w-full flex justify-center items-center'>{children}</div>
+    )
+  )
 }

@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from 'motion/react'
 import { Spinner } from '@/shared/ui/spinner'
 import {
   AbsoluteWrapper,
-  StickyPortalWrapper,
+  PortalWrapper,
   StickyWrapper,
 } from '@/shared/ui/Sticky'
 
@@ -19,7 +19,7 @@ export function AnimatedFetchingIndicator({
   condition,
 }: AnimatedFetchingIndicatorProps) {
   return (
-    <StickyPortalWrapper>
+    <PortalWrapper>
       <AbsoluteWrapper className={`left-[50%] translate-x-[-50%] ${className}`}>
         <StickyWrapper className='top-10'>
           <AnimatePresence>
@@ -36,6 +36,6 @@ export function AnimatedFetchingIndicator({
           </AnimatePresence>
         </StickyWrapper>
       </AbsoluteWrapper>
-    </StickyPortalWrapper>
+    </PortalWrapper>
   )
 }

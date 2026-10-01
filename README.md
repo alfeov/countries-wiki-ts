@@ -5,8 +5,8 @@
 - In project used:
   - UI:
     - ShadCN UI
-    - motion (animation library)
     - Tailwind
+    - motion (animation library)
   - Base:
     - Typescript
     - Redux (RTK + RKT Query)

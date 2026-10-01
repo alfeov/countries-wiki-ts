@@ -6,12 +6,12 @@ import { cn } from '@/shared/lib/utils'
 import { createMotionedComponent, sideVariant } from '@/shared/lib/utils/motion'
 import { buttonVariants } from '@/shared/ui/button'
 import {
+  FallbackImage,
+  FallbackText,
   Image,
-  ImageOnError,
   ImageWrapper,
   Loader,
-  TextOnError,
-} from '@/shared/ui/ImageWithLoader'
+} from '@/shared/ui/Image'
 import { Skeleton } from '@/shared/ui/skeleton'
 
 import noImage from '@/shared/assets/images/no-image.png'
@@ -53,8 +53,8 @@ export function CountryInfo({
                 <Loader>
                   <Skeleton className='w-full bg-muted-foreground dark:bg-muted' />
                 </Loader>
-                <ImageOnError src={noImage} alt={names.common} />
-                <TextOnError>{names.common}</TextOnError>
+                <FallbackImage src={noImage} alt={names.common} />
+                <FallbackText>{names.common}</FallbackText>
               </Image>
             </ImageWrapper>
           </motion.div>

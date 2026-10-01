@@ -10,12 +10,12 @@ import {
   CardTitle,
 } from '@/shared/ui/card'
 import {
+  FallbackImage,
+  FallbackText,
   Image,
-  ImageOnError,
   ImageWrapper,
   Loader,
-  TextOnError,
-} from '@/shared/ui/ImageWithLoader'
+} from '@/shared/ui/Image'
 import { Skeleton } from '@/shared/ui/skeleton'
 
 import noImage from '@/shared/assets/images/no-image.png'
@@ -38,8 +38,8 @@ export function CountryItem({
           <Loader>
             <Skeleton className='w-full m-5' />
           </Loader>
-          <ImageOnError src={noImage} alt={names.common} />
-          <TextOnError>{names.common}</TextOnError>
+          <FallbackImage src={noImage} alt={names.common} />
+          <FallbackText>{names.common}</FallbackText>
         </Image>
       </ImageWrapper>
       <CardHeader className='grow'>

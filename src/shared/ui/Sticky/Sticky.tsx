@@ -1,13 +1,15 @@
 import { createPortal } from 'react-dom'
 
-interface StickyPortalWrapper {
+interface PortalWrapper {
   children: React.ReactNode
 }
-export function StickyPortalWrapper({ children }: StickyPortalWrapper) {
+
+export function PortalWrapper({ children }: PortalWrapper) {
   return createPortal(children, document.body)
 }
 
 type AbsoluteWrapperProps = React.ComponentProps<'div'>
+
 export function AbsoluteWrapper({
   className = '',
   children,
@@ -21,6 +23,7 @@ export function AbsoluteWrapper({
 }
 
 type StickyWrapperProps = React.ComponentProps<'div'>
+
 export function StickyWrapper({
   className = '',
   children,
@@ -33,10 +36,12 @@ export function StickyWrapper({
   )
 }
 
-// Portal
-//  Absolute
-//   Sticky
-//     .... < your components
-//   Sticky
-//  Absolute
-// Portal
+type Sticky = React.ComponentProps<'div'>
+
+export function Sticky({ children, className }: Sticky) {
+  return (
+    <AbsoluteWrapper className={className}>
+      <StickyWrapper>{children}</StickyWrapper>
+    </AbsoluteWrapper>
+  )
+}

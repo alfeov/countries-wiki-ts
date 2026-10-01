@@ -1,25 +1,25 @@
 import { fireEvent, render, screen } from '@testing-library/react'
 
 import {
+  FallbackImage,
+  FallbackText,
   Image,
-  ImageOnError,
   ImageWrapper,
   Loader,
-  TextOnError,
-} from './ImageWithLoader'
+} from './Image'
 
-describe('ImageWithLoader', () => {
+describe('Image', () => {
   beforeEach(() => {
     render(
       <ImageWrapper>
         <Image src='' alt='altname' data-testid='primary-image'>
           <Loader>Loading...</Loader>
-          <ImageOnError
+          <FallbackImage
             src='fallback.test.jpg'
             alt='fallback'
             data-testid='fallback-image'
           />
-          <TextOnError>Error text...</TextOnError>
+          <FallbackText>Error text...</FallbackText>
         </Image>
       </ImageWrapper>,
     )
